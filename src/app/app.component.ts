@@ -13,6 +13,11 @@ constructor(public appService:AppService){
 }
 
 ngOnInit(){
-  this.appService.getData().subscribe(data=>console.log(this.arr=data));
+  // this.appService.getData().subscribe(data=>this.arr=data);
+  this.appService.getData().subscribe(data=>{
+    this.arr=data.body;
+    console.log(data);
+  }
+    );
 }
 }
