@@ -1,3 +1,4 @@
+import { Post } from './post';
 import { AppService } from './app.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,11 +14,17 @@ constructor(public appService:AppService){
 }
 
 ngOnInit(){
+
   // this.appService.getData().subscribe(data=>this.arr=data);
-  this.appService.getData().subscribe(data=>{
-    this.arr=data.body;
-    console.log(data);
-  }
-    );
+
+  // this.appService.getData().subscribe(data=>{
+  //   this.arr=data.body;
+  //   console.log(data);
+  // }
+  //   );
+
+  this.appService.getData().subscribe((data:Post)=>this.arr=data);
+
 }
+
 }
